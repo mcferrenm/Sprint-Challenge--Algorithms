@@ -115,19 +115,23 @@ class SortingRobot:
                 self.swap_item()
                 self.move_right()
 
+            if not self.light_is_on():
+                break
+
             while self.can_move_left():
+                # self.move_left()
+
+                # *** stretch attempt ***
+                # how do you keep it from doing the last loop to check, after its really already done?
+
+                self.swap_item()
                 self.move_left()
-                
-                # *** stretch attempt *** 
-                
-                # self.swap_item()
-                # self.move_left()
-                # if self.compare_item() == -1:
-                #     self.swap_item()
-                #     self.set_light_on()
-                # self.move_right()
-                # self.swap_item()
-                # self.move_left()
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.set_light_on()
+                self.move_right()
+                self.swap_item()
+                self.move_left()
 
         # self.set_light_on()
         # self.swap_item()
@@ -150,6 +154,7 @@ class SortingRobot:
 
         # l = [4, 10, 7, 8, 3]
         # self.move_right()
+
 
         # self.set_light_on()
         # while self.light_is_on():
